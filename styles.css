@@ -1,0 +1,11 @@
+#vid {
+	border: solid black 1px;
+}
+
+#grad {
+    background: white; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(179,220,237,1), white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(179,220,237,1), white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(179,220,237,1), white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(179,220,237,1), white); /* Standard syntax */
+}
