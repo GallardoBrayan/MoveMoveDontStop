@@ -117,10 +117,11 @@ setInterval( function(){
 				console.log("Movement Detected===============================================================");
 				timerMotion.elapsed = 0;  //reset
 				console.log("New time: ", timerMotion.elapsed);
+				musicShouldBePlaying = true;
 
 			}
 			else{
-				if (timerMotion.elapsed > 10){
+				if (timerMotion.elapsed > 8){
 					console.log("Music should be stopped");
 					timerMotion.elapsed = 0;
 					musicShouldBePlaying = false;

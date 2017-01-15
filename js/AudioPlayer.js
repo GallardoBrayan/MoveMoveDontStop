@@ -2,12 +2,11 @@
 
 
 var audio = new Audio();
-
 document.getElementById("file_chooser").onchange = function(){
 	audio.src = URL.createObjectURL(document.getElementById("file_chooser").files[0]);
 	initMp3Player();
 }
-//audio.src = 'file:///C:/Users/Joshua/Desktop/WebStuff2/HackAthon/GEazyXBebeRexha_MeMyselfI_MeMyselfI_1.mp3';
+
 audio.controls = true;
 audio.loop = true;
 audio.autoplay = false;
