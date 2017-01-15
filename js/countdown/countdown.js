@@ -35,23 +35,7 @@ function initializeClock(id) {
 */
 
 
-class Timer {
-  constructor(startTime) { 
-  this.elapsed = startTime;
-    this.increment = 1;
-  }
-  
-  start(){
-    if (this.increment == 0 ){
-      this.increment = 1;
-    }
-  }
-  
-  pause(){
-    this.increment = 0;
-  }
-  
-}
+
 
 var timer1;
 
@@ -65,7 +49,9 @@ function initializeClock(id) {
     return;}
   timer1 = new Timer(0);
   timer1.start();
-  
+  musicShouldBePlaying = true;
+
+
   function updateClock() {
     secondsDisplay.innerHTML = ('0' + (30 - timer1.elapsed)).slice(-2); //display
     timer1.elapsed += timer1.increment;                         //update
@@ -78,6 +64,8 @@ function initializeClock(id) {
       //initializeClock(id);                    // utilize recursion so that immediately after 0 seconds,
     }                                         // it restarts the clock
   }
+
+
 
   updateClock();
   var timeinterval = setInterval(updateClock, 1000);
@@ -106,6 +94,3 @@ function incExercise()
 }
 
 
-document.getElementById("pauseButton").onclick = function(){
-    timer1.pause();
-};

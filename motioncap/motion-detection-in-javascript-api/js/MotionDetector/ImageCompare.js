@@ -8,6 +8,20 @@
  * @version        -
  * 
  */
+var timerMotion = new Timer(0),
+	musicShouldBePlaying = true;
+
+
+setInterval( function(){
+	timerMotion.elapsed += timerMotion.increment;
+	console.log("elapsed: ", timerMotion.elapsed);
+	}, 1000);
+
+
+
+
+
+
 
 ;(function(App) {
 
@@ -45,6 +59,8 @@
 
 			topLeft = [Infinity,Infinity];
 			bottomRight = [0,0];
+
+
 		}
 
 		/*
@@ -96,9 +112,20 @@
 
 			console.log(numPixelsChanged);
 
-			if (numPixelsChanged > 170)
+			if (numPixelsChanged > 160)
 			{
 				console.log("Movement Detected===============================================================");
+				timerMotion.elapsed = 0;  //reset
+				console.log("New time: ", timerMotion.elapsed);
+
+			}
+			else{
+				if (timerMotion.elapsed > 10){
+					console.log("Music should be stopped");
+					timerMotion.elapsed = 0;
+					musicShouldBePlaying = false;
+				}
+
 			}
 
 

@@ -10,6 +10,25 @@
     <link rel="stylesheet" type="text/css" href="motioncap/motion-detection-in-javascript-api/styles/main.css" media="all">
     <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <script>
+        class Timer {
+            constructor(startTime) { 
+            this.elapsed = startTime;
+            this.increment = 1;
+        }
+
+        start(){
+            if (this.increment == 0 ){
+            this.increment = 1;
+            }
+        }
+
+        pause(){
+            this.increment = 0;
+        }
+
+        }
+    </script>
 </head>
 <body id="grad">
 
@@ -56,7 +75,7 @@
         <script type="text/javascript" src="motioncap/motion-detection-in-javascript-api/js/MotionDetector/Core.js"></script>
         <script type="text/javascript" src="motioncap/motion-detection-in-javascript-api/js/main.js"></script>
                 <div class="row">
-                    <button type="button" class="btn btn-primary col-md-6" onclick="initializeClock('clockdiv')">Start</button>
+                    <button type="button" class="btn btn-primary col-md-6" onclick="initializeClock('clockdiv'); audio.play()">Start</button>
                     <button type="button" class="btn btn-danger col-md-6" id = "pauseButton">Pause</button>
                 </div>
     </div>
@@ -64,7 +83,28 @@
         <div class="content">
             <image id="exercise_image" style="width: 400px;height: 300px;"></image>
         </div>
+            <input type=file id = "file_chooser"></input>
+        <div id="mp3_player">
+        <div id="audio_box"></div>
+        <canvas id="analyser_render"></canvas>
+        </div>
     </div>
+
     <script src="js/countdown/countdown.js"></script> 
+    <script src="js/AudioPlayer.js"></script>
+    <script> 
+            document.getElementById("pauseButton").onclick = function(){
+                audio.pause();
+                timer1.pause();
+            };
+
+            setInterval(function(){
+                if (!musicShouldBePlaying){
+                    audio.pause();
+                }
+
+            }, 5000);
+
+    </script>
 </body>
 </html>

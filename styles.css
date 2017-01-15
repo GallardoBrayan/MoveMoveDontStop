@@ -94,3 +94,16 @@
     opacity: 1;
     filter: alpha(opacity=100);
 }
+
+
+div#mp3_player{
+    width:400px; 
+    height:60px; 
+    background:#000; 
+    float:left;
+    margin-left: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+div#mp3_player > div > audio{  width:400px; background:#000; float:left;  }
+div#mp3_player > canvas{ width:400px; height:30px; background:#002D3C; float:left; }

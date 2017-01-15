@@ -86,7 +86,7 @@
 			document.getElementById('movement').style.height = (bottomRight[1] - topLeft[1]) + 'px';
 
 			topLeft = [Infinity,Infinity];
-			bottomRight = [0,0]
+			bottomRight = [0,0];
 
 		}
 
