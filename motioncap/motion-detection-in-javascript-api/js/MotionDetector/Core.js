@@ -79,13 +79,9 @@
 
 			bottomRight[0] = vals.bottomRight[0] * 10;
 			bottomRight[1] = vals.bottomRight[1] * 10;
-
-			if (topLeft[0] == topLeft[1]) {
-				alert("hi");
-			}
+			
 			document.getElementById('movement').style.top = topLeft[1] + 'px';
 			document.getElementById('movement').style.left = topLeft[0] + 'px';
-
 			document.getElementById('movement').style.width = (bottomRight[0] - topLeft[0]) + 'px';
 			document.getElementById('movement').style.height = (bottomRight[1] - topLeft[1]) + 'px';
 
