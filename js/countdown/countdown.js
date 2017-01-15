@@ -72,6 +72,7 @@ function initializeClock(id) {
     if (timer1.elapsed == 31) {
       //clearInterval(timeinterval);
       ++exercise_number;
+      if (exercise_number > 7){ exercise_number =0; }
       exerciseImg.src  = possible_exercises[exercise_number];
       timer1.elapsed = 0;
       //initializeClock(id);                    // utilize recursion so that immediately after 0 seconds,
@@ -104,7 +105,6 @@ function incExercise()
   ++exercise_number;
 }
 
-initializeClock('clockdiv');
 
 document.getElementById("pauseButton").onclick = function(){
     timer1.pause();
