@@ -10,3 +10,19 @@ function getTimeRemaining(endtime){
     'seconds': seconds
   };
 }
+
+function initializeClock(id, endtime) {
+	var clock = getElementById(id);
+	function updateClock(){
+  	var t = getTimeRemaining(endtime);
+  	clock.innerHTML = 'days: ' + t.days + '<br>' +
+                    'hours: '+ t.hours + '<br>' +
+                    'minutes: ' + t.minutes + '<br>' +
+                    'seconds: ' + t.seconds;
+  	if(t.total<=0){
+    clearInterval(timeinterval);
+  		}
+	}
+}
+
+initializeClock('clockid',deadline);

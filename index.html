@@ -11,12 +11,15 @@
     <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
-<body>
+<body id="grad">
     <script src="js/motioncapture/motioncap.js"></script> 
     <script src="js/countdown/countdown.js"></script> 
-    <div id="grad">
-        <div class="container">
-    	   <video id="video" class="center-block" autoplay></video>
+    <div class="container" >
+        <h1 class="text-center" id="title">Move, Move, Don't Stop!</h1>
+        <div id="clockdiv"></div>
+        <div class="vid center-block">
+            <video id="video" autoplay></video>
+            <div class="btn btn-block btn-primary">Start</div>
         </div>
     </div>
 </body>
