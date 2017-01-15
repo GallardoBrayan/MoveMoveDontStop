@@ -1,6 +1,6 @@
 var constraints = {
     audio: false,
-    video: { width: 640, height: 280 }
+    video: { width: 640, height: 480 }
 };
 navigator.mediaDevices.getUserMedia(constraints)
     .then(success)

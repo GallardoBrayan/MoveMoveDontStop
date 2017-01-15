@@ -12,7 +12,6 @@
 }
 
 .vid {
-	border: solid black 1px;
 	width: 640px;
 	display: block;
 	margin: 0 auto;
@@ -57,6 +56,13 @@
 .content  {
 	float:left;
 	margin-left: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.contentbox {
+    height: 680px;
+    border: 1px black solid;
 }
 
 .smalltext{

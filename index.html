@@ -12,10 +12,15 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body id="grad">
-    <script src="js/motioncapture/motioncap.js"></script> 
-    
+  <div id="div1" class="contentbox">
     <div class="top"><h1 class="text-center" id="title">Move, Move, Don't Stop!</h1></div>
-    <div class="container">
+    <a href="#" onclick="return false;" onmousedown="autoScrollTo('div2');">Go to App</a>
+  </div>
+
+
+
+    <script src="js/motioncapture/motioncap.js"></script> 
+    <div id="div2" class="container contentbox">    
         <div class="clock-wrap">
           <div id="clockdiv">
             <div>
@@ -28,10 +33,12 @@
             <div><video id="video" autoplay></video></div>
             <div class="btn btn-block btn-primary">Start</div>
         </div>
-        <div class="content">
-            <p>To play this game blasjblasdalks dlas dkadns</p>
-        </div>
+
         
+        <!-- PICTURE GOES HERE-->
+        <div class="content">
+            <img src="https://dragossuciu2003.files.wordpress.com/2013/11/diamond_pushup1.png" style="width: 400px;height: 300px;">
+        </div>
     </div>
     <script src="js/countdown/countdown.js"></script> 
 </body>
