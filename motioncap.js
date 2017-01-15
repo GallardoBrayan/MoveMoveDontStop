@@ -2,7 +2,7 @@ var constraints = {
     audio: false,
     video: { width: 640, height: 480 }
 };
-navigator.mediaDevices.getUserMedia(constraints)
+navigator.mediaDevices.getUserMedia(constraints)	
     .then(success)
     .catch(error);
 
