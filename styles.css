@@ -79,13 +79,18 @@
 
 
 
-#goApp {
-    width: 10%;
-    margin: 0 auto;
+#icon {
+    text-align: center;
+    display: block;
     margin-top: 250px;
 }
 
-#goApp img::hover {
-    opacity: 1;
+#icon img {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
 
+#icon img:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
 }

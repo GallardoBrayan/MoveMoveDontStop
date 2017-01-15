@@ -31,7 +31,7 @@
 		 *
 		 */
 		function initialize() {
-			sensitivity = 150;
+			sensitivity = 35;
 
 			if(!temp1Canvas) {
 				temp1Canvas = document.createElement('canvas');
@@ -65,16 +65,18 @@
 				return;
 			}
 
-
 			temp1Context.clearRect(0,0,100000,100000);
 			temp1Context.clearRect(0,0,100000,100000);
 
 			temp1Context.drawImage(image1, 0, 0, width, height);
 			temp2Context.drawImage(image2, 0, 0, width, height);
 
+			var numPixelsChanged = 0;
 
-			for(var y = 0; y < height; y++) {
-				for(var x = 0; x <  width; x++) {
+			for(var y = height/6; y < 5*height/6; y++) {
+				for(var x = width/6; x <  5*width/6; x++) {
+
+
 					var pixel1 = temp1Context.getImageData(x,y,1,1);
 					var pixel1Data = pixel1.data;
 
@@ -82,11 +84,44 @@
 					var pixel2Data = pixel2.data;
 
 					if(comparePixel(pixel1Data, pixel2Data) == false) {
+						++numPixelsChanged;
+						// alert("KYS");
+						// break;
 						setTopLeft(x,y);
 						setBottomRight(x,y);
+						// return;
 					}					
 				}
 			}
+
+			console.log(numPixelsChanged);
+
+			if (numPixelsChanged > 170)
+			{
+				console.log("Movement Detected===============================================================");
+			}
+
+
+			// for(var y = 0; y < height; y++) {
+			// 	for(var x = 0; x <  width; x++) {
+			// 		var pixel1 = temp1Context.getImageData(x,y,1,1);
+			// 		var pixel1Data = pixel1.data;
+
+			// 		var pixel2 = temp2Context.getImageData(x,y,1,1);
+			// 		var pixel2Data = pixel2.data;
+
+			// 		if(comparePixel(pixel1Data, pixel2Data) == false) {
+			// 			// alert("KYS");
+			// 			// break;
+			// 			// setTopLeft(x,y);
+			// 			// setBottomRight(x,y);
+
+						
+
+			// 			// return;
+			// 		}					
+			// 	}
+			// }
 
 			return {
 				'topLeft': topLeft,
@@ -165,3 +200,4 @@
 		}
 	};
 })(MotionDetector);
+	
