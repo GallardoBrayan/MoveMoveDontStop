@@ -37,3 +37,31 @@ function initializeClock(id, endtime) {
 var deadline = new Date(Date.parse(new Date()) + 30 * 1000);
 
 initializeClock('clockdiv', deadline);
+
+// Below is a new version of the countdown clock (W/O fancy graphics). 
+// It has basic functionality -- it will countdown from 30s, and will
+// restart immediately when reached to 0 seconds.
+
+/*
+function startTimer(duration, display) {
+    var timer = duration, seconds 
+    setInterval(function () {
+
+        seconds = parseInt(timer % 60, 10);
+
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var thirtySec = 30,
+        display = document.querySelector('#time'); // you can change the '#time' to whatever the html doc says
+                                                   // when it comes to displaying the time.
+    startTimer(thirtySec, display);
+}; *\
